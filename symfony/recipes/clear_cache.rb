@@ -5,7 +5,7 @@ node[:deploy].each do |application, deploy|
   #execute 'clear_symfony_cache_prod' do
   script "clear_symfony_cache" do
     interpreter "bash"
-    user "www-data"
+    user "root"
     cwd "#{deploy[:deploy_to]}/current"
     #code <<-EOH
     #php app/console cache:clear --env=prod --no-debug 
