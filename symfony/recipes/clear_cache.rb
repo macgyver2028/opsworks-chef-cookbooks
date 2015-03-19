@@ -7,12 +7,12 @@ node[:deploy].each do |application, deploy|
     interpreter "bash"
     user "root"
     cwd "#{deploy[:deploy_to]}/current"
-    #code <<-EOH
-    #php app/console cache:clear --env=prod --no-debug 
-    #EOH
+    code <<-EOH
+    php app/console cache:clear --env=prod --no-debug
+    EOH
     # The command below doesn't appear to be running..so added the above block
-    command "php app/console cache:clear --env=prod --no-debug"
-    action :run
+    #command "php app/console cache:clear --env=prod --no-debug"
+    #action :run
   end
 end
 
