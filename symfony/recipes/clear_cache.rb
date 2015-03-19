@@ -8,7 +8,7 @@ node[:deploy].each do |application, deploy|
     user "root"
     cwd "#{deploy[:deploy_to]}/current"
     code <<-EOH
-    php app/console doctrine:mongodb:schema:update 
+    php app/console cache:clear --env=prod --no-debug 
     EOH
     # The command below doesn't appear to be running..so added the above block
     command "php app/console cache:clear --env=prod --no-debug"
