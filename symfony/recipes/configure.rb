@@ -35,10 +35,10 @@ node[:deploy].each do |application, deploy|
   #end
 
   # Create the parameters.yml file.
-  #include_recipe 'symfony::paramconfig'
+  include_recipe 'symfony::paramconfig'
   
   # Install dependencies using composer install
-  #include_recipe 'composer::install'
+  include_recipe 'composer::install'
 
   # Clear and warm-up Symfony cache if warmup_cache option is defined in the application configuration
   #if node[:custom_env][application.to_s].has_key?("warmup_cache")
